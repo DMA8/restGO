@@ -1,0 +1,3 @@
+port: 8080
+goose_up: "schema/000001_init.up.sql"
+goose_down: "schema/000001_init.down.sql"
