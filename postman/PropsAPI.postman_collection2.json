@@ -38,7 +38,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-12-30\"}, {\"id\": 2, \"date\":\"2022-12-30\"}]}"
+					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-30-12\"}, {\"id\": 2, \"date\":\"2022-30-12\"}]}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/create",
@@ -61,17 +61,17 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-12-30\"}, {\"id\": 2, \"date\":\"2022-12-30\"}]}"
+					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-26-12\"}, {\"id\": 2, \"date\":\"2022-26-12\"}]}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/create",
+					"raw": "http://localhost:8080/update",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"create"
+						"update"
 					]
 				}
 			},
