@@ -1,5 +1,5 @@
-FROM golang:1.17-buster as builder
-EXPOSE 3000
+FROM golang:1.18-alpine 
+EXPOSE 8080
 WORKDIR /app
 COPY go.* ./
 RUN go mod download

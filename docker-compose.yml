@@ -3,11 +3,12 @@ services:
   app:
     environment:
     - CONNSTR=postgresql://postgres:postgres@db:5432/postgres?sslmode=disable
-    - UPMEGRATE=schema/000001_init.up.sql
+    - MIGRATES=file://schema
+    - PORT=:8080
     build:
       context: .
       dockerfile: Dockerfile
-    ports: # Проброс портов
+    ports:
       - "8080:8080"
     depends_on:
     - db
@@ -16,5 +17,6 @@ services:
     environment:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
-    ports: # Проброс портов
+    ports:
      - "5432:5432"
+    init: true
