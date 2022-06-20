@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "254d78f0-8e6e-4a09-9f5a-2ce487b86c90",
+		"name": "PropsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_multiple_props",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"props\":[{\"id\": 1}, {\"id\": 2}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_multiple_props",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-12-30\"}, {\"id\": 2, \"date\":\"2022-12-30\"}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_multiple_props",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"props\":[{\"id\": 1, \"date\":\"2022-12-30\"}, {\"id\": 2, \"date\":\"2022-12-30\"}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
