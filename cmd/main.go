@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"testTask/internal/entrypoint"
 	"testTask/internal/repository"
@@ -22,8 +23,9 @@ const (
 var migrateDown = flag.Bool("migrateDown", false, "executes migrateDown and exit app")
 
 func main() {
-	log.Println("app is starting")
-	flag.Parse() // looking for -migrateDown flag
+	log.Println("app is starting, waiting for PSQL")
+	time.Sleep(time.Second * 5) // waitin DB (not the best way to wait db)
+	flag.Parse()// looking for -migrateDown flag
 	log.Println("migrations begin")
 	errMigrate := psql.Migrate(*migrateDown)
 	if *migrateDown {
@@ -41,7 +43,7 @@ func main() {
 		log.Fatal("db connection is bad:", err)
 	}
 	defer conn.Close()
-	
+
 	repo := repository.NewRepository(conn)
 	useCase := usecases.NewUseCase(repo)
 	handler := entrypoint.NewHandler(useCase)
