@@ -1,5 +1,0 @@
-export PORT=":8080"
-export CONNSTR="postgresql://postgres:postgres@localhost:5432/postgres?sslmode=disable"
-export db="postgres"
-export UPMIGRATE="schema/000001_init.up.sql"
-export UPMIGRATE2="gooseUp.sql"

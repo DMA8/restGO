@@ -18,7 +18,8 @@ func (h *Handler) getByIDs(w http.ResponseWriter, r *http.Request) {
 	}
 	ans, err := h.useCase.GetByIDs(InpIDs)
 	if err != nil {
-		writeAnswer(w, http.StatusInternalServerError, err.Error())
+		writeAnswer(w, http.StatusInternalServerError, fmt.Sprintf("coudn't get props in DB %s",err.Error()))
+		return
 	}
 	writeAnswerWithProps(w, http.StatusOK, ans)
 }
@@ -45,10 +46,10 @@ func (h *Handler) updateProps(w http.ResponseWriter, r *http.Request) {
 	}
 	err = h.useCase.UpdateProps(InpMsg)
 	if err != nil {
-		writeAnswer(w, http.StatusInternalServerError, fmt.Sprintf("couldn't insert %s", err.Error()))
+		writeAnswer(w, http.StatusInternalServerError, fmt.Sprintf("couldn't update %s", err.Error()))
 		return
 	}
-	writeAnswer(w, http.StatusOK, "insert succeed")
+	writeAnswer(w, http.StatusOK, "update succeed")
 }
 
 
